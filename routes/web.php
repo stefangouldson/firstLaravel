@@ -16,10 +16,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/','PagesController@index')->name('pages/index');
 Route::get('/welcome','PagesController@welcome');
 
-Route::get('/about', 'PagesController@about');
+Route::get('/about', 'PagesController@about')->name('pages/about');
 
-Route::get('/users','PagesController@users');
+Route::get('/users','PagesController@users')->name('pages/users');
 
 Route::get('/user/{name}', function ($name) {
     return "<h1>The current user is {$name}</h1>";
 });
+
+Route::resource('posts', 'PostsController');

@@ -1,4 +1,13 @@
 body {
-  background-color: rgb(142, 170, 169);
+  background-color: orange;
+}
+
+h1 {
+  color: white;
+  text-shadow: 2px 2px black;
+}
+
+li {
+  color: red;
 }
 
