@@ -25,7 +25,7 @@ class PostsController extends Controller
      */
     public function create()
     {
-        //
+        return view('posts.create');
     }
 
     /**
@@ -36,7 +36,17 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'myTitle' => 'required',
+            'body' => 'required'
+        ]);
+
+        $post = new Post;
+        $post->title = $request->input('myTitle');
+        $post->body = $request->input('body');
+        $post->save();
+
+        return redirect( route('posts.index') );
     }
 
     /**
@@ -47,7 +57,8 @@ class PostsController extends Controller
      */
     public function show($id)
     {
-        //
+        $post = Post::find($id);
+        return view('posts.show')->with('post', $post);
     }
 
     /**
@@ -58,7 +69,8 @@ class PostsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $post = Post::find($id);
+        return view('posts.edit')->with('post', $post);
     }
 
     /**
@@ -70,7 +82,19 @@ class PostsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'myTitle' => 'required',
+            'body' => 'required'
+        ]);
+
+        $post = Post::find($id);
+
+        $post->title = $request->input('myTitle');
+        $post->body = $request->input('body');
+
+        $post->save();
+
+        return redirect( route('posts.index') );
     }
 
     /**
@@ -81,6 +105,8 @@ class PostsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $post = Post::find($id);
+        $post->delete();
+        return redirect( route('posts.index'));
     }
 }

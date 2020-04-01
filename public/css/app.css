@@ -11,3 +11,22 @@ li {
   color: red;
 }
 
+.post {
+  background-color: white;
+  padding: 10px 20px;
+  margin-bottom: 40px;
+}
+
+p {
+  background-color: white;
+  padding: 1%;
+  border: 2px solid black;
+  border-radius: 1%;
+}
+
+label {
+  text-decoration: underline;
+  font-weight: bold;
+  color: white;
+}
+
