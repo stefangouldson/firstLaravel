@@ -14,7 +14,10 @@
         {{ Form::textArea('body', $post->body,['class' => 'form-control']) }}
     </div>
     {{ Form::hidden('_method', 'PUT') }}
-    {{ Form::submit('Submit', ['class' => 'btn btn-primary'])}}<span> <a class="btn btn-success" href="{{route('posts.index')}}/{{$post->id}}"">Go Back</a></span>
+    <div class="btn-group">
+    {{ Form::submit('Submit', ['class' => 'btn btn-primary'])}}
+    <a class="btn btn-secondary" href="{{route('posts.index')}}/{{$post->id}}">Go Back</a>
+    </div>
 
     {{ Form::close() }}
 @endsection

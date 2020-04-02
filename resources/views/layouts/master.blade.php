@@ -34,9 +34,6 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('pages/index')}}">Home</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link" href="{{route('pages/about')}}">About</a>
                         </li>
                         <li class="nav-item">
@@ -45,13 +42,11 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('posts.index')}}">Posts</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{route('posts.create')}}">Create</a>
-                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
+
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
@@ -69,6 +64,7 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{route('posts.create')}}">Create Post</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
