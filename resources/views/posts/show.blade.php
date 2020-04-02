@@ -1,6 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
+
     <h1 class="page-header">{{$post->title}}</h1>
     <hr>
     <p>{{$post->body}}</p>

@@ -1,33 +1,8 @@
-//
-body{
-    background-color: orange;
-}
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
 
+// Variables
+@import 'variables';
 
-h1 {
-    color: white;
-    text-shadow: 2px 2px black;
-}
-
-li{
-    color: red;
-}
-
-.post{
-    background-color: white;
-    padding: 10px 20px;
-    margin-bottom: 40px;
-}
-
-p{
- background-color: white;
- padding: 1%;
- border: 2px solid black;
- border-radius: 1%;
-}
-
-label{
-    text-decoration: underline;
-    font-weight: bold;
-    color: white;
-}
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
