@@ -64,7 +64,7 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{route('home')}}">Dashboard</a>
+                                    <a class="dropdown-item" href="{{route('home')}}">My Posts</a>
                                     <a class="dropdown-item" href="{{route('posts.create')}}">Create Post</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
