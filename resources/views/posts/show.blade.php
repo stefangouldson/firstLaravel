@@ -2,18 +2,20 @@
 
 @section('content')
 
-    <h1 class="page-header">{{$post->title}}</h1> <span><a class="btn btn-secondary" href="{{route('posts.index')}}">Go back</a></span>
+    <h1 class="page-header">{{$post->title}}</h1>
     <hr>
     <p>{{$post->body}}</p>
-    <div class="d-flex justify-content-center">
+    <hr>
 
-    {{ Form::open(array('action' => ['PostsController@destroy', $post->id], 'method' => 'post')) }}
-        {{ Form::hidden('_method', 'DELETE') }}
-        <div class="btn-group">
-            <a class="btn btn-success" href="{{route('posts.index')}}/{{$post->id}}/edit">Edit</a>
-        {{ Form::submit('Delete',['class'=>'btn btn-danger']) }}
-        </div>
-    {{ Form::close() }}
-</div>
+    <div class="d-flex justify-content-center">
+        {{ Form::open(array('action' => ['PostsController@destroy', $post->id], 'method' => 'post')) }}
+            {{ Form::hidden('_method', 'DELETE') }}
+            <div class="btn-group">
+                <a class="btn btn-secondary" href="{{route('posts.index')}}">Go back</a>
+                <a class="btn btn-success" href="{{route('posts.index')}}/{{$post->id}}/edit">Edit</a>
+            {{ Form::submit('Delete',['class'=>'btn btn-danger']) }}
+            </div>
+        {{ Form::close() }}
+    </div>
 
 @endsection
